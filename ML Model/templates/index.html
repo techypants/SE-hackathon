@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <!--From https://codepen.io/frytyler/pen/EGdtg-->
+  <head>
+    <meta charset="UTF-8" />
+    <title>ML API</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Arimo"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Hind:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+
+  <body>
+    <div class="login">
+      <h1>Predictive Maintenance System</h1>
+
+      <!-- Main Input For Receiving Query to our ML -->
+      <form action="{{ url_for('predict')}}" method="post">
+        <!-- <input
+            type="text"
+            name="Product_ID"
+            placeholder="Product_ID"
+            required="required"
+          />
+          <input type="text" name="Type" placeholder="Type" required="required" /> -->
+        <input
+          type="number"
+          name="Air_Temp"
+          placeholder="Air_Temp"
+          required="required"
+          step="0.01"
+        />
+        <input
+          type="number"
+          name="Process_Temp"
+          placeholder="Process_Temp"
+          required="required"
+          step="0.01"
+        />
+        <input
+          type="number"
+          name="Rot_Speed"
+          placeholder="Rot_Speed"
+          required="required"
+          step="0.01"
+        />
+        <input
+          type="number"
+          name="Torque"
+          placeholder="Torque"
+          required="required"
+          step="0.01"
+        />
+        <input
+          type="number"
+          name="Tool_Wear"
+          placeholder="Tool_Wear"
+          required="required"
+          step="0.01"
+        />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+          Predict
+        </button>
+      </form>
+
+      <br />
+      <br />
+      <!-- {{ prediction_text }} -->
+      <h2><strong> Predicted target value is: </strong></h2>
+      {{ prediction }}
+    </div>
+  </body>
+</html>
