@@ -17,12 +17,12 @@ const Signup = ({ onLogin }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(logins.email, logins.password, logins.role)  // Access email, password, and role from logins state
+    console.log(logins.email, logins.password, logins.role);
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setLogins((prevState) => ({ ...prevState, [name]: value })); // Update the state based on input name
+    setLogins((prevState) => ({ ...prevState, [name]: value }));
   };
 
   return (
@@ -30,7 +30,7 @@ const Signup = ({ onLogin }) => {
       <h2 className="font-extrabold text-[60px]">Register</h2>
       <form
         onSubmit={handleSubmit}
-        className="border-2 border-slate-700 rounded-lg gap-4 flex flex-col p-8"
+        className="border-2 border-slate-700 rounded-lg gap-4 flex flex-col p-8 m-4"
       >
         <div className="flex flex-col">
           <label className="text-[20px]">Name:</label>
