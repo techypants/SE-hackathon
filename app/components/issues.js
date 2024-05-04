@@ -1,13 +1,16 @@
-"use client"; 
+"use client"; // This is a client component 👈🏽
 import React, { useState, useEffect } from "react";
 import "./issues.css"; // Import external CSS file
 
-export default function IssueComp({ machineId, machineName, issue}) {
+export default function IssueComp({ machineId, machineName, issue, prob, mdate, reqDays}) {
   const [timer, setTimer] = useState(0);
   const [startTime, setStartTime] = useState(null);
   const [endTime, setEndTime] = useState(null);
   const [isCompleted, setIsCompleted] = useState(false);
-	const [isClick, setIsClick] = useState(false);
+  const [isClick, setIsClick] = useState(false);
+  const currentDate = new Date();
+  const daysSinceMaintenance = Math.floor((currentDate.getTime() - new Date(mdate).getTime()) / (1000 * 60 * 60 * 24));
+  const progress = Math.min(1, daysSinceMaintenance / reqDays); // Ensure progress is between 0 and 1
 
   useEffect(() => {
     let interval;
@@ -50,7 +53,8 @@ export default function IssueComp({ machineId, machineName, issue}) {
         <p className="font-bold">Machine Name: {machineName}</p>
         <p className="font-bold">Issue: {issue}</p>
       </div>
-      <div className="flex justify-between items-center mb-4">
+	  <div className="btr">
+      <div className="butt flex justify-between items-center mb-4">
         {(!isCompleted &&!isClick) &&  (
           <button
             className="button button-blue"
@@ -72,6 +76,12 @@ export default function IssueComp({ machineId, machineName, issue}) {
         )}
         {isCompleted && <p>Time taken: {calculateTimeTaken()} secondss</p>}
       </div>
+	  <div className="sdate"></div>
+	  <div className=" range flex w-full bg-gray-200 mt-2 rounded-md overflow-hidden">
+        <div className="progress-bar bg-green-500 h-8" style={{ width: `${progress * 100}%` }}></div>
+      </div>
+	  <div className="mdate">{mdate}</div>
+	  </div>
       {startTime && !endTime && (
         <p>Elapsed Time: {timer} seconds</p>
       )}
