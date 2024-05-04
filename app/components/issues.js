@@ -77,13 +77,20 @@ export default function IssueComp({ machineId, machineName, issue, prob, mdate, 
         {isCompleted && <p>Time taken: {calculateTimeTaken()} secondss</p>}
       </div>
 	  <div className=" range flex w-full mt-2 rounded-md overflow-hidden">
-        <div className="progress-bar bg-green-500 h-8" style={{ width: `${progress * 100}%` }}></div>
+	  {(daysSinceMaintenance/reqDays) > 1 ? (
+  		<div className="progress-bar bg-green-500 h-8" style={{ width: `${progress * 100}%` }}></div>
+		) : (
+  		<div className="progress-bar bg-blue-500 h-8" style={{ width: `${progress * 100}%` }}></div>
+		)}
+
+       
       </div>
 	  <div className="rdays flex">{daysSinceMaintenance} days left out of {reqDays}</div>
 	  <div className="mdate">{mdate}</div>
 	  </div>
       {startTime && !endTime && (
         <p>Elapsed Time: {timer} seconds</p>
+
       )}
     </div>
   );

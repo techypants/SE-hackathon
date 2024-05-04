@@ -10,7 +10,7 @@ export default function WorkerDashboard() {
       machineName: "Machine 1",
       issue: "Issue with component X",
       prob: "High",
-      mdate: "2024-04-30", // Sample maintenance date
+      mdate: "2024-04-15", // Sample maintenance date
       reqDays: 9, // Sample required days for maintenance
     },
     {

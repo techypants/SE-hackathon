@@ -31,7 +31,7 @@
 
   .progress-bar{
     display: flex;
-    background-color: rgb(17, 255, 0);
+    /* background-color: rgb(17, 255, 0); */
   }
 
   .rdays{
