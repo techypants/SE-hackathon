@@ -1,0 +1,57 @@
+.issue-card {
+    background-color: #f3f4f6;
+    margin-left: 15%;
+    color: #4a5568;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    width: 70%;
+    margin-bottom: 1.5rem;
+  }
+  
+  .issue-details {
+    margin-bottom: 1rem;
+  }
+  
+  .button {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    outline: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-blue {
+    background-color: #4299e1;
+    color: #fff;
+  }
+  
+  .button-blue:hover {
+    background-color: #3182ce;
+  }
+  
+  .button-green {
+    background-color: #48bb78;
+    color: #fff;
+  }
+  
+  .button-green:hover {
+    background-color: #38a169;
+  }
+  
+  .button-red {
+    background-color: #e53e3e;
+    color: #fff;
+  }
+  
+  .button-red:hover {
+    background-color: #c53030;
+  }
+  
+  .timer {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+  }
+  
