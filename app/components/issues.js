@@ -1,4 +1,4 @@
-"use client"; // This is a client component 👈🏽
+"use client"; 
 import React, { useState, useEffect } from "react";
 import "./issues.css"; // Import external CSS file
 
@@ -7,7 +7,8 @@ export default function IssueComp({ machineId, machineName, issue}) {
   const [startTime, setStartTime] = useState(null);
   const [endTime, setEndTime] = useState(null);
   const [isCompleted, setIsCompleted] = useState(false);
-  const [isClick, setIsClick] = useState(false);
+	const [isClick, setIsClick] = useState(false);
+
   useEffect(() => {
     let interval;
     if (startTime && !endTime) {
