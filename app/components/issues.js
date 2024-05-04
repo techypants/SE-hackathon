@@ -1,4 +1,4 @@
-"use client"; // This is a client component 👈🏽
+"use client"; 
 import React, { useState, useEffect } from "react";
 import "./issues.css"; // Import external CSS file
 
