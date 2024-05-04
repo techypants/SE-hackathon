@@ -12,6 +12,25 @@
   .issue-details {
     margin-bottom: 1rem;
   }
+
+  .btr{
+    display: flex;
+
+  }
+  .butt{
+    
+    width:20%;
+  }
+
+  .range{
+    margin-left: 30%;
+    width: 40%;
+    height:10%;
+  }
+
+  .progress-bar{
+    background-color: rgb(17, 255, 0);
+  }
   
   .button {
     cursor: pointer;
